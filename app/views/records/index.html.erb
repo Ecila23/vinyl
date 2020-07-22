@@ -1,0 +1,12 @@
+<p>
+  <%= link_to('New Record', new_record_path) %>
+</p>
+
+<ul>
+<% @records.each do |record| %>
+  <li>
+    <%= record.title %>
+    <%= link_to('View me', record_path(record.slug)) %>
+  </li>
+<% end %>
+</ul>

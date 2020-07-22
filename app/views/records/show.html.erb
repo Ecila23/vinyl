@@ -1,0 +1,10 @@
+<p>
+  <%= link_to('Back', records_path) %>
+  &middot;
+  <%= link_to('Edit', edit_record_path(@record.slug)) %>
+  &middot;
+  <%= link_to('Destroy', record_path(@record.slug), method: :delete, data: { confirm: 'Are you sure?' }) %>
+</p>
+
+<h2><%= @record.title %></h2>
+<p>Release year: <%= @record.year %></p>
