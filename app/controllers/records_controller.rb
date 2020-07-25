@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   before_action(:find_record, only: %i[show edit update destroy])
 
   def index
-    @records = @user.records.all
+    @records = Record.all
   end
 
   def new
@@ -18,7 +18,7 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @record = @user.records.new(record_params)
+    @record = Record.new(record_params)
 
     return render :new unless @record.save
 
@@ -58,7 +58,7 @@ class RecordsController < ApplicationController
   private
 
   def find_record
-    @record = @user.records.find_by(slug: params[:slug])
+    @record = Record.find_by(slug: params[:slug])
   end
 
   def record_params
