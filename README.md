@@ -1,24 +1,35 @@
-# README
+# Vinyl Database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo application to help explain some concepts around Rails. Here's how to install it.
 
-Things you may want to cover:
+## System Requirements
 
-* Ruby version
+- [homebrew](https://brew.sh/)
+- gpg: `brew install gpg`
+- [asdf-vm](https://asdf-vm.com)
+- [asdf NodeJS plugin](https://github.com/asdf-vm/asdf-nodejs)
+- [asdf Ruby plugin](https://github.com/asdf-vm/asdf-ruby)
+- [asdf Yarn plugin](https://github.com/asdf-vm/asdf-ruby)
 
-* System dependencies
+## Setup Dependencies
 
-* Configuration
+Run the following commands:
 
-* Database creation
+1. `asdf install`
+2. `bundle`
+3. `yarn install`
 
-* Database initialization
+Optional: `sudo gem install rails` - if you perform this step, any command starting `bundle exec rails` can be replaced with `rails`
 
-* How to run the test suite
+## DB setup and migration
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle exec rails db:setup`
+`bundle exec rails db:migrate`
 
-* Deployment instructions
+## Running the development server
 
-* ...
+`bundle exec rails server`
+
+## Running the console
+
+`bundle exec rails console`
